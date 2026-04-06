@@ -63,7 +63,23 @@ if (isset($_GET['route'])) {
 function sendEmail($data) {
     $subject = 'Wedding dietary requirements';
     $message =  "{$data->full_name} : {$data->restrictions}";
-    $mail =  mail(MAIL_TO, $subject, $message);
+    // $mail =  mail(MAIL_TO, $subject, $message);
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->isSMTP();                          // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';           // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                   // Enable SMTP authentication
+    $mail->Username = MAIL_USERNAME;          // SMTP username
+    $mail->Password = MAIL_PASSWORD;          // SMTP password
+    $mail->SMTPSecure = 'tls';                // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+    $mail->Subject =  $subject;
+    $mail->Body  = $message;
+    $mail->addAddress(MAIL_TO);
+    $mail->send();
+
+
     return $mail;
 }
 
