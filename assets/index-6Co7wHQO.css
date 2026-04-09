@@ -94,7 +94,6 @@ main {
 }
 .header-image {
   width: 80%;
-  border-radius: 10px;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -122,6 +121,7 @@ main {
     width: 150px;
     height: 150px;
     background-size: contain;
+    border-radius: 50%;
   }
   .header-image img {
     width: auto;
@@ -426,8 +426,20 @@ a.button:hover {
 .dietary_form {
   padding: 20px;
   background-color: #ecefff;
+  opacity: 0.8;
   margin: 0 0 20px;
   border-radius: 4px;
+}
+.dietary_form p {
+  padding: 0 0 5px;
+}
+.error_message {
+  padding: 20px;
+  margin: 0 0 20px;
+  border-radius: 10px;
+  background-color: #ecc3c3;
+  border: 1px solid #ff6b6b;
+  color: #d20404;
 }
 .thank-you-overlay.svelte-78rqep {
   position: fixed;

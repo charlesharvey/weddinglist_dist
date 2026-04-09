@@ -166,10 +166,17 @@ function getProducts() {
             "maxPrice" => $maxPrice,
         ]);
     }
-    shuffle($products);
+    // shuffle($products);
+    usort($products, "sort_price");
 
     return $products;
 }
+
+
+function sort_price($a, $b) {
+    return $a['price'] > $b['price'];
+}
+
 
 
 function getTestProducts() {
