@@ -222,6 +222,14 @@ function getProducts() {
         // $active = $sp['active'];
 
 
+        $is_sold  = false;
+        $metadata = ($sp['metadata']);
+        if ($metadata) {
+            if ($metadata['sold']) {
+                $is_sold = true;
+            }
+        }
+
         $variable = false;
         $maxPrice = 10000;
         $image = null;
@@ -248,6 +256,7 @@ function getProducts() {
             "custom_unit_amount" => $sp['default_price']['custom_unit_amount'],
             "variable" => $variable,
             "maxPrice" => $maxPrice,
+            "isSold" => $is_sold,
         ]);
     }
     // shuffle($products);
