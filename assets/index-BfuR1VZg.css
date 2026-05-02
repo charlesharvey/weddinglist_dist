@@ -156,7 +156,8 @@ main {
   background-size: 20px;
 }
 .another_image {
-  height: 450px;
+display:none; 
+ height: 450px;
   width: 100%;
   background: url(../assets/church-BBdQ0GMO.png) no-repeat center center;
   background-size: contain;
