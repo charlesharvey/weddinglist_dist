@@ -479,6 +479,12 @@ a.button:hover {
   border: 1px solid #ff6b6b;
   color: #d20404;
 }
+img.svelte-1s08fg4 {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1;
+  margin: 20px 0;
+}
 .thank-you-overlay.svelte-78rqep {
   position: fixed;
   inset: 0;
